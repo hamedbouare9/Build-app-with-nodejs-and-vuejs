@@ -9,3 +9,6 @@ useful_link.txt
 
 # Ignore macOS specific .DS_Store directory
 .DS_Store
+
+# Ignore env file
+back_end/.env
