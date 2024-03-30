@@ -3,14 +3,8 @@ import morgan from 'morgan';
 import bodyParser from 'body-parser';
 
 import logger from './utils/logger.js';
-import connectToMongoDB from './database/connectToPostgreSql.js';
-import { MONGO_DB_URL, MONGO_DB_NAME, SERVER_PORT } from './utils/constants.js';
-
-import surveyRoutes from './surveys-api/routes/surveys.js';
 
 const app = express();
-
-connectToMongoDB(MONGO_DB_URL, MONGO_DB_NAME);
 
 // Middleware setup
 app.use(morgan('dev')); // Morgan for logging (HTTP request logger middleware)
@@ -33,7 +27,7 @@ app.use((req, res, next) => {
 });
 
 //
-app.use('/orders', orderRoutes);
+// app.use('/orders', orderRoutes);
 
 // Handle 404 errors
 app.use((_req, _res, next) => {
@@ -53,6 +47,6 @@ app.use((error, _req, res) => {
 });
 
 // Start server
-app.listen(SERVER_PORT, () => {
-  logger.info(`Server is running on port ${SERVER_PORT}`);
+app.listen('1000', () => {
+  logger.info(`Server is running on port ${'1000'}`);
 });
